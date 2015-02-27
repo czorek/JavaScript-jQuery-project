@@ -10,19 +10,15 @@ $('#random_color').on('click', function () {
 	randomize();
 })
 
-$('#gradient').on('click', function () {
-	opacity();
-})
-
 });
 
-function populate(size) {
+function populate(size) {   // populate grid with a proper amount of squares
 
 		var s_size = (960 / size);
 
 		if($('.square')[0]) {
 
-			$('.square').remove();
+			$('.square').remove();  // empty the grid if there are squares already
 
 		}	
 
@@ -41,7 +37,7 @@ function populate(size) {
 
 function sketch() {
 	$('.square').hover(function(){
-			$(this).css('background-color', 'black');
+			$(this).css('background-color', 'black');  // change div color to black on hover
 	});		
 }
 
@@ -52,26 +48,8 @@ function reset() {
 
 function randomize() {
 	$('.square').hover(function() {
-   var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+   var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16); // generate random div colors on hover
     $(this).css('background-color', randomColorChange);
     });
 }
 
- function opacity() {       // decrease opacity of square by 10% with each pass of the mouse
-     
-     $(".square").mouseenter(
-         
-         function() {
-         
-         var currentOpacity = $(this).css("opacity");
-         
-         if(!(currentOpacity === 0)) {
-         
-         $(this).css("opacity", currentOpacity + 0.1);
-         
-     }
-         
-                            
-     });
-     
- }
