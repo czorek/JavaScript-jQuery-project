@@ -1,0 +1,16 @@
+
+.wrapper {
+	width: 960px;
+	height: 960px;
+	margin: 0px auto;
+	border-width: 1px;
+	border-style: solid;
+	display: block;
+	font-size: 0;
+}
+
+.square {
+	border-style: none;
+	display: inline-block;
+	background-color: white;
+}
